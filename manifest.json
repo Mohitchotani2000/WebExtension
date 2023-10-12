@@ -1,0 +1,29 @@
+{
+    "name": "WordWise",
+    "version": "0.0.1",
+    "description": "Discover. Understand. Rewrite.",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "contextMenus",
+        "webNavigation"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "128": "logo.png"
+        }
+    },
+    "content_scripts": [
+        {
+          "js": ["scripts/content.js"],
+          "matches": [
+            "https://*/*"
+          ]
+        }
+    ],
+    "manifest_version": 3
+}
